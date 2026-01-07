@@ -1,0 +1,4 @@
+DROP DATABASE IF EXISTS repasosql;
+CREATE DATABASE repasosql;
+
+
