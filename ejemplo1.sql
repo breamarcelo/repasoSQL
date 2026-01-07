@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS repasosql;
 CREATE DATABASE repasosql;
 USE repasosql;
 
-CREATE TABLE TDireccon
+CREATE TABLE TDireccion
 (
     pkID INT(4) NOT NULL PRIMARY KEY,
     Calle VARCHAR(20) NOT NULL,
@@ -16,10 +16,10 @@ CREATE TABLE TPersona
     pkID INT(4) NOT NULL PRIMARY KEY,
     Nombre VARCHAR(20) NOT NULL,
     Apellidos VARCHAR(20) NOT NULL,
-    Telefono VARCHAR,
+    Telefono VARCHAR(10),
     FechaNac DATE,
     fkDireccionId INT(4) NOT NULL,
-    FOREIGN KEY (fkDireccionId) REFERENCES TDireccon(pkID) 
+    FOREIGN KEY (fkDireccionId) REFERENCES TDireccion(pkID) 
     ON DELETE CASCADE 
     ON UPDATE CASCADE
 );
