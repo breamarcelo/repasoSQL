@@ -10,14 +10,12 @@ CREATE TABLE TPersona
     Telefono VARCHAR(10),
     FechaNac DATE,
     fkDireccionId INT(4) NOT NULL,
-    FOREIGN KEY (fkDireccionId) REFERENCES TDireccon(pkID) 
-    ON DELETE CASCADE 
-    ON UPDATE CASCADE
+    FOREIGN KEY (fkDireccionId) REFERENCES TDireccion(pkDirID)
 );
 
-CREATE TABLE TDireccon
+CREATE TABLE TDireccion
 (
-    pkID INT(4) NOT NULL,
+    pkDirID INT(4) NOT NULL,
     Calle VARCHAR(20) NOT NULL,
     Numero INT(4) NOT NULL,
     CP INT(5) NOT NULL,
