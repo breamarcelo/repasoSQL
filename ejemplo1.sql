@@ -8,7 +8,7 @@ CREATE TABLE TPersona
     Nombre VARCHAR(20) NOT NULL,
     Apellidos VARCHAR(20) NOT NULL,
     Telefono VARCHAR,
-    FechaNac DATE,
+    FechaNac TIMESTAMP,
     fkDireccionId INT(4) NOT NULL,
     FOREIGN KEY (fkDireccionId) REFERENCES TDireccon(pkID) 
     ON DELETE CASCADE 
