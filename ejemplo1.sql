@@ -4,7 +4,7 @@ USE repasosql;
 
 CREATE TABLE TDireccion
 (
-    pkID INT(4) NOT NULL,
+    pkID INT(4) NOT NULL DEFAULT AUTO,
     Calle VARCHAR(20) NOT NULL,
     Numero INT(4) NOT NULL,
     CP INT(5) NOT NULL DEFAULT 33401,
@@ -14,7 +14,7 @@ CREATE TABLE TDireccion
 
 CREATE TABLE TPersona
 (
-    pkID INT(4) NOT NULL PRIMARY KEY,
+    pkID INT(4) NOT NULL PRIMARY KEY DEFAULT AUTO,
     Nombre VARCHAR(20) NOT NULL,
     Apellidos VARCHAR(20) NOT NULL,
     Telefono VARCHAR(10),
