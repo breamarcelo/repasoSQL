@@ -36,3 +36,5 @@ INSERT INTO TPersona(Nombre, Apellidos, Telefono, FechaNac, fkDireccionId) VALUE
 INSERT INTO TPersona(Nombre, Apellidos, Telefono, FechaNac, fkDireccionId) VALUES("Melchor", "Mago", "666554433", "1900-01-06", 3);
 INSERT INTO TPersona(Nombre, Apellidos, Telefono, FechaNac, fkDireccionId) VALUES("Gaspar", "Mago", "666554433", "1900-01-06", 3);
 INSERT INTO TPersona(Nombre, Apellidos, Telefono, FechaNac, fkDireccionId) VALUES("Baltazar", "Mago", "666554433", "1900-01-06", 3);
+
+UPDATE TPersona SET Telefono="666778899" WHERE pkID="2";
