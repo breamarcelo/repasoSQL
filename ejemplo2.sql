@@ -20,7 +20,7 @@ DROP PROCEDURE IF EXISTS transferencia;
 DELIMITER $$
 CREATE PROCEDURE transferencia()
 BEGIN
-    DECLARE EXIT HANDLER FOR SQLEXEPTION
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
         ROLLBACK;
         SELECT "Transacción fallida: saldo insuficiente." AS Message;
