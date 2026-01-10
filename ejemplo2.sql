@@ -15,11 +15,27 @@ VALUES(2, 2000);
 INSERT INTO cuentas
 VALUES(3, 0);
 
-ROLLBACK;
-START TRANSACTION;
-UPDATE cuentas SET saldo= saldo + 100 WHERE id = 2;
-UPDATE cuentas SET saldo= saldo - 100 WHERE id = 3;
-COMMIT;
+
+DROP PROCEDURE IF EXISTS transferencia;
+DELIMITER $$
+CREATE PROCEDURE transferencia()
+BEGIN
+    DECLARE EXIT HANDLER FOR SQLEXEPTION
+    BEGIN
+        ROLLBACK;
+        SELECT "Transacción fallida: saldo insuficiente." AS Message;
+    END;
+
+    START TRANSACTION;
+        UPDATE cuentas SET saldo = saldo + 100 WHERE id = 2;
+        UPDATE cuentas SET saldo = saldo - 100 WHERE id = 3;
+    COMMIT;
+
+    SELECT "Transacción exitosa." AS Message;
+END
+DELIMITER $$
+
+CALL transferencia();
 
 SELECT *
 FROM cuentas;
