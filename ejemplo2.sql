@@ -17,7 +17,7 @@ VALUES(3, 0);
 
 
 DROP PROCEDURE IF EXISTS transferencia;
-DELIMITER $$
+DELIMITER //
 CREATE PROCEDURE transferencia()
 BEGIN
     DECLARE EXIT HANDLER FOR SQLEXCEPTION
@@ -33,7 +33,7 @@ BEGIN
 
     SELECT "Transacción exitosa." AS Message;
 END
-DELIMITER $$
+DELIMITER //
 
 CALL transferencia();
 
