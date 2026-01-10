@@ -32,8 +32,8 @@ BEGIN
     COMMIT;
 
     SELECT "Transacción exitosa." AS Message;
-END
-DELIMITER //
+END //
+DELIMITER ;
 
 CALL transferencia();
 
