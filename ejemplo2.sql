@@ -15,7 +15,11 @@ VALUES(2, 2000);
 INSERT INTO cuentas
 VALUES(3, 0);
 
+ROLLBACK;
 START TRANSACTION;
 UPDATE cuentas SET saldo= saldo + 100 WHERE id = 2;
 UPDATE cuentas SET saldo= saldo - 100 WHERE id = 3;
 COMMIT;
+
+SELECT *
+FROM cuentas;
